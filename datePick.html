@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>日期三级联动选择</title>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/datePick.js"></script>
+</head>
+
+<body>
+    <div class="date-list">
+        <select name="" id="year" data-value="2016"></select>
+        <select name="" id="month" data-value="02"></select>
+        <select name="" id="day" data-value="02"></select>
+    </div>
+</body>
+<script>
+    $(function() {
+
+        var str = "2016-02-03";
+        var _date = str.split('-');
+
+
+
+        $('.date-list').find('select').each(function(index) {
+
+            console.log(_date[index])
+            $(this).attr("data-value", _date[index]);
+
+        })
+
+        $.datePick({
+            YearSelector: "#year",
+            MonthSelector: "#month",
+            DaySelector: "#day"
+        });
+    })
+</script>
+
+</html>
